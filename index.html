@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Website de acolhimento do Campus de Almada do Piaget, com guia de chegada, serviços, cursos, links úteis, FAQ e contactos."
+    >
+    <title>Piaget Almada | Website de Acolhimento</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#inicio" aria-label="Piaget Almada, voltar ao início">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>
+          <strong>Piaget Almada</strong>
+          <small>Website de Acolhimento</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#campus">Campus</a>
+        <a href="#primeiro-dia">Primeiro Dia</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contactos">Contactos</a>
+      </nav>
+
+      <a class="login-button" href="#links">Entrar</a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+        <span class="sr-only">Abrir menu</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <a href="#campus">Campus</a>
+      <a href="#primeiro-dia">Primeiro Dia</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contactos">Contactos</a>
+    </div>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media">
+          <img src="assets/campus-building.png" alt="Edifício do Campus de Almada do Piaget">
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Campus de Almada</p>
+          <h1 id="hero-title">Acolhimento simples para novos estudantes</h1>
+          <p>
+            Uma plataforma clara para orientar estudantes, visitantes e famílias nos primeiros
+            contactos com o campus, os serviços, os espaços e a vida académica.
+          </p>
+          <div class="button-row">
+            <a class="primary-button" href="#primeiro-dia">Começar guia</a>
+            <a class="secondary-button" href="#mapa">Ver mapa</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-info" aria-label="Informação rápida">
+        <article>
+          <strong>Hoje</strong>
+          <span>Receção ao estudante</span>
+        </article>
+        <article>
+          <strong>09:00-18:00</strong>
+          <span>Secretaria aberta</span>
+        </article>
+        <article>
+          <strong>Bloco A</strong>
+          <span>Ponto de apoio inicial</span>
+        </article>
+      </section>
+
+      <section class="section section-muted" id="campus" aria-labelledby="campus-title">
+        <div class="section-head">
+          <p class="eyebrow">O campus</p>
+          <h2 id="campus-title">Informação essencial num único lugar</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="number-badge">01</span>
+            <h3>Chegar ao campus</h3>
+            <p>Transportes, acessos, estacionamento e entrada principal explicados de forma direta.</p>
+          </article>
+          <article class="feature-card">
+            <span class="number-badge">02</span>
+            <h3>Encontrar espaços</h3>
+            <p>Biblioteca, secretaria, salas, cantina e zonas de estudo organizadas por necessidade.</p>
+          </article>
+          <article class="feature-card">
+            <span class="number-badge">03</span>
+            <h3>Resolver dúvidas</h3>
+            <p>Contactos úteis, perguntas frequentes e processos académicos com linguagem simples.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="mapa" aria-labelledby="map-title">
+        <div>
+          <p class="eyebrow">Mapa funcional</p>
+          <h2 id="map-title">Orientação visual para o primeiro dia</h2>
+          <p>
+            O mapa do campus ajuda a perceber onde deve ir primeiro, reduzindo a ansiedade inicial
+            e evitando pesquisa dispersa.
+          </p>
+          <ul class="check-list">
+            <li>Entrada principal e receção</li>
+            <li>Secretaria e serviços académicos</li>
+            <li>Biblioteca, salas e zonas de estudo</li>
+            <li>Cantina, espaços sociais e acessibilidade</li>
+          </ul>
+        </div>
+        <div class="campus-map" aria-label="Mapa simplificado do campus">
+          <span class="map-route" aria-hidden="true"></span>
+          <button class="map-pin pin-entry" type="button" data-map-label="Entrada principal">Entrada</button>
+          <button class="map-pin pin-office" type="button" data-map-label="Secretaria">Secretaria</button>
+          <button class="map-pin pin-library" type="button" data-map-label="Biblioteca">Biblioteca</button>
+          <button class="map-pin pin-canteen" type="button" data-map-label="Cantina">Cantina</button>
+          <span class="map-block block-a">Bloco A</span>
+          <span class="map-block block-b">Bloco B</span>
+          <span class="map-block block-c">Bloco C</span>
+          <span class="map-block block-d">Bloco D</span>
+          <span class="map-block block-e">Bloco E</span>
+          <span class="map-block block-f">Bloco F</span>
+          <span class="map-block block-g">Bloco G</span>
+          <span class="map-block block-h">Bloco H</span>
+          <span class="map-garden">Jardim</span>
+          <output class="map-output" data-map-output>Entrada principal</output>
+        </div>
+      </section>
+
+      <section class="arrival-section" id="primeiro-dia" aria-labelledby="arrival-title">
+        <div class="arrival-bg" aria-hidden="true"></div>
+        <div class="arrival-content">
+          <p class="eyebrow">Primeiro dia</p>
+          <h2 id="arrival-title">Checklist de chegada ao campus</h2>
+          <p>
+            Uma área prática para reduzir dúvidas antes da primeira visita e orientar o estudante
+            desde a entrada no campus até ao acesso às plataformas digitais.
+          </p>
+          <div class="arrival-grid">
+            <article class="check-card">
+              <span class="dot"></span>
+              <h3>Antes de chegar</h3>
+              <ul>
+                <li>Confirmar horário e sala.</li>
+                <li>Levar documento de identificação.</li>
+                <li>Guardar contactos da secretaria.</li>
+              </ul>
+            </article>
+            <article class="check-card">
+              <span class="dot"></span>
+              <h3>Ao chegar</h3>
+              <ul>
+                <li>Entrar pela receção principal.</li>
+                <li>Confirmar localização da sala.</li>
+                <li>Identificar biblioteca e zonas de estudo.</li>
+              </ul>
+            </article>
+            <article class="check-card">
+              <span class="dot"></span>
+              <h3>Depois da receção</h3>
+              <ul>
+                <li>Ativar email institucional.</li>
+                <li>Aceder ao Portal do Estudante.</li>
+                <li>Consultar eventos de acolhimento.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="servicos" aria-labelledby="services-title">
+        <div class="section-head">
+          <p class="eyebrow">Serviços</p>
+          <h2 id="services-title">Acesso rápido ao que o estudante precisa</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Secretaria</h3>
+            <p>Matrículas, certificados, horários, pagamentos e documentos académicos.</p>
+            <a href="#contactos">Ver contacto</a>
+          </article>
+          <article class="service-card">
+            <h3>Biblioteca</h3>
+            <p>Pesquisa, estudo, reservas, apoio documental e recursos digitais.</p>
+            <a href="#links">Ver horário</a>
+          </article>
+          <article class="service-card">
+            <h3>Apoio ao estudante</h3>
+            <p>Integração, necessidades especiais, acompanhamento e encaminhamento.</p>
+            <a href="#contactos">Pedir apoio</a>
+          </article>
+          <article class="service-card">
+            <h3>Vida académica</h3>
+            <p>Eventos, atividades, núcleos, sessões de acolhimento e oportunidades.</p>
+            <a href="#primeiro-dia">Ver eventos</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="cursos" aria-labelledby="courses-title">
+        <div class="section-head">
+          <p class="eyebrow">Cursos em Almada</p>
+          <h2 id="courses-title">Oferta organizada por área</h2>
+          <p>
+            A página de cursos ajuda candidatos e novos estudantes a perceberem rapidamente que
+            áreas existem no Campus de Almada.
+          </p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card">
+            <span>Educação</span>
+            <h3>Escola Superior de Educação</h3>
+            <p>Formação orientada para educação, intervenção, comunidade e práticas pedagógicas.</p>
+          </article>
+          <article class="course-card">
+            <span>Saúde</span>
+            <h3>Escola Superior de Saúde</h3>
+            <p>Cursos ligados à saúde, bem-estar, terapias e acompanhamento de pessoas.</p>
+          </article>
+          <article class="course-card">
+            <span>Tecnologia</span>
+            <h3>Tecnologias e Gestão</h3>
+            <p>Formação em áreas digitais, gestão, dados, desenvolvimento e inovação.</p>
+          </article>
+          <article class="course-card">
+            <span>CTeSP</span>
+            <h3>Formação técnica superior</h3>
+            <p>Percursos práticos com foco na entrada rápida no mercado de trabalho.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-muted guide-section" aria-labelledby="guide-title">
+        <div>
+          <p class="eyebrow">Guia do estudante</p>
+          <h2 id="guide-title">Fluxo pensado para quem chega pela primeira vez</h2>
+          <p>
+            A página guia organiza os passos de entrada no campus desde a preparação antes da
+            visita até ao acompanhamento depois do primeiro contacto.
+          </p>
+        </div>
+        <div class="timeline">
+          <article>
+            <span>1</span>
+            <div>
+              <h3>Antes de chegar</h3>
+              <p>Consultar transportes, documentos necessários, horários e localização.</p>
+            </div>
+          </article>
+          <article>
+            <span>2</span>
+            <div>
+              <h3>No campus</h3>
+              <p>Passar pela receção, confirmar serviços e localizar salas principais.</p>
+            </div>
+          </article>
+          <article>
+            <span>3</span>
+            <div>
+              <h3>Depois da receção</h3>
+              <p>Aceder aos links úteis, plataformas digitais e contactos de apoio.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-muted links-section" id="links" aria-labelledby="links-title">
+        <div>
+          <p class="eyebrow">Links úteis</p>
+          <h2 id="links-title">Acessos importantes reunidos num só local</h2>
+          <p>
+            Em vez de obrigar o estudante a procurar em várias páginas, o website concentra os
+            acessos usados com mais frequência.
+          </p>
+        </div>
+        <div class="links-grid">
+          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Inforestudante</a>
+          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">e-serviços</a>
+          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Portal do Estudante</a>
+          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Propinas</a>
+          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Ação Social</a>
+          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Campus Almada</a>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Perguntas frequentes</h2>
+          <p>A FAQ responde às dúvidas mais comuns e reduz pedidos repetidos aos serviços.</p>
+        </div>
+        <div class="accordion" data-accordion>
+          <article class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="true">
+                Onde devo ir no primeiro dia?
+              </button>
+            </h3>
+            <div class="faq-panel">
+              <p>O primeiro ponto deve ser a receção ou secretaria, onde podes confirmar sala, horário e serviços disponíveis.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false">
+                Como acedo ao email institucional?
+              </button>
+            </h3>
+            <div class="faq-panel" hidden>
+              <p>Depois da inscrição, confirma os dados de acesso junto da secretaria ou consulta o Portal do Estudante.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false">
+                Onde encontro os horários?
+              </button>
+            </h3>
+            <div class="faq-panel" hidden>
+              <p>Os horários são comunicados pelos serviços académicos e devem ser confirmados no portal institucional.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false">
+                Existe apoio para estudantes internacionais?
+              </button>
+            </h3>
+            <div class="faq-panel" hidden>
+              <p>Sim. A receção e os serviços de apoio encaminham pedidos sobre integração, documentação e adaptação ao campus.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false">
+                Como posso contactar os serviços?
+              </button>
+            </h3>
+            <div class="faq-panel" hidden>
+              <p>Usa os contactos abaixo para falar com a secretaria, pedir apoio ou confirmar a localização dos serviços.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contactos" aria-labelledby="contacts-title">
+        <div>
+          <p class="eyebrow">Contactos</p>
+          <h2 id="contacts-title">Ajuda clara, sem pesquisa longa</h2>
+          <p>
+            A secção de contactos reúne canais principais e um formulário simples para pedidos de
+            informação, apoio ou encaminhamento.
+          </p>
+          <div class="contact-list">
+            <a href="mailto:sa.almada@ipiaget.pt">
+              <strong>Secretaria</strong>
+              <span>sa.almada@ipiaget.pt</span>
+            </a>
+            <a href="tel:+351 212 946 261">
+              <strong>Telefone</strong>
+              <span>+351 212 946 261</span>
+            </a>
+            <span>
+              <strong>Localização</strong>
+              <span>Campus de Almada</span>
+            </span>
+          </div>
+        </div>
+        <form class="contact-form" data-contact-form>
+          <label>
+            Nome
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Assunto
+            <select name="subject" required>
+              <option value="">Escolher assunto</option>
+              <option>Primeiro dia</option>
+              <option>Serviços académicos</option>
+              <option>Apoio ao estudante</option>
+              <option>Outro pedido</option>
+            </select>
+          </label>
+          <label>
+            Mensagem
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="primary-button" type="submit">Enviar pedido</button>
+          <p class="form-status" role="status" data-form-status></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#inicio" aria-label="Piaget Almada, voltar ao início">
+        <span class="footer-mark" aria-hidden="true">P</span>
+        <span>
+          <strong>PIAGET</strong>
+          <small>Ensino Superior</small>
+        </span>
+      </a>
+      <span>Campus de Almada do Piaget</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

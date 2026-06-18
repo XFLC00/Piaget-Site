@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor folders
+.vscode/
+.idea/
+
+# Temporary screenshots and exports
+desktop*.png
+mobile*.png
+*-tail.png
+
