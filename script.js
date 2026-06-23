@@ -58,6 +58,40 @@ document.querySelectorAll("[data-map-label]").forEach((pin) => {
   });
 });
 
+const programTabs = Array.from(document.querySelectorAll("[data-program-tab]"));
+const programPanels = Array.from(document.querySelectorAll("[data-program-panel]"));
+
+function setActiveProgram(program) {
+  programTabs.forEach((tab) => {
+    const isActive = tab.dataset.programTab === program;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+
+  programPanels.forEach((panel) => {
+    const isActive = panel.dataset.programPanel === program;
+    panel.classList.toggle("is-active", isActive);
+    panel.hidden = !isActive;
+  });
+}
+
+programTabs.forEach((tab, index) => {
+  const activate = () => setActiveProgram(tab.dataset.programTab);
+
+  tab.addEventListener("mouseenter", activate);
+  tab.addEventListener("focus", activate);
+  tab.addEventListener("click", activate);
+  tab.addEventListener("keydown", (event) => {
+    const keys = ["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"];
+    if (!keys.includes(event.key)) return;
+
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : -1;
+    const nextIndex = (index + direction + programTabs.length) % programTabs.length;
+    programTabs[nextIndex].focus();
+  });
+});
+
 const secretarySchedule = {
   1: { day: "segunda-feira", hours: "14:00-16:00", start: 14 * 60, end: 16 * 60 },
   2: { day: "terça-feira", hours: "10:00-12:00", start: 10 * 60, end: 12 * 60 },
@@ -86,9 +120,6 @@ function getLisbonDateParts(date = new Date()) {
   const formatter = new Intl.DateTimeFormat("pt-PT", {
     timeZone: "Europe/Lisbon",
     weekday: "long",
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
     hourCycle: "h23",
@@ -101,8 +132,6 @@ function getLisbonDateParts(date = new Date()) {
 
   return {
     dayIndex: weekdayIndex[weekday] ?? date.getDay(),
-    weekday,
-    dateLabel: `${parts.day}/${parts.month}/${parts.year}`,
     minutes: Number(parts.hour) * 60 + Number(parts.minute),
   };
 }
@@ -121,38 +150,31 @@ function findNextSecretarySlot(dayIndex) {
 }
 
 function updateSecretaryStatus() {
-  const { dayIndex, weekday, dateLabel, minutes } = getLisbonDateParts();
+  const { dayIndex, minutes } = getLisbonDateParts();
   const todaySlot = secretarySchedule[dayIndex];
   const nextSlot = findNextSecretarySlot(dayIndex);
-  const statusCards = document.querySelectorAll(".today-status");
+  const statusCards = document.querySelectorAll(".secretary-status");
 
-  let status = "Sem atendimento presencial hoje.";
+  let status = "Sem atendimento presencial.";
   let isOpen = false;
 
   if (todaySlot) {
     if (minutes < todaySlot.start) {
-      status = `Ainda encerrada. Abre hoje às ${todaySlot.hours.split("-")[0]}.`;
+      status = `Ainda encerrada. Abre às ${todaySlot.hours.split("-")[0]}.`;
     } else if (minutes >= todaySlot.start && minutes < todaySlot.end) {
       status = `Aberta agora. Encerra às ${todaySlot.hours.split("-")[1]}.`;
       isOpen = true;
     } else {
       status = nextSlot
-        ? `Encerrada por hoje. Próximo atendimento: ${nextSlot.day}, ${nextSlot.hours}.`
-        : "Encerrada por hoje.";
+        ? `Encerrada. Próximo atendimento: ${nextSlot.day}, ${nextSlot.hours}.`
+        : "Encerrada.";
     }
   } else if (nextSlot) {
-    status = `Encerrada hoje. Próximo atendimento: ${nextSlot.day}, ${nextSlot.hours}.`;
+    status = `Encerrada. Próximo atendimento: ${nextSlot.day}, ${nextSlot.hours}.`;
   }
 
-  setText("[data-current-day]", `Hoje, ${weekday}`);
-  setText("[data-current-date]", dateLabel);
   setText("[data-secretary-hours]", todaySlot ? todaySlot.hours : "Encerrado");
   setText("[data-secretary-status]", status);
-  setText("[data-secretary-today]", todaySlot ? todaySlot.hours : "Encerrado");
-
-  document.querySelectorAll("[data-weekday]").forEach((item) => {
-    item.classList.toggle("is-today", Number(item.dataset.weekday) === dayIndex);
-  });
 
   statusCards.forEach((card) => {
     card.classList.toggle("is-open", isOpen);

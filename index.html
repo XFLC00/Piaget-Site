@@ -57,9 +57,6 @@
 
     <main id="inicio">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media">
-          <img src="assets/campus-building.png" alt="Edifício do Campus de Almada do Piaget">
-        </div>
         <div class="hero-copy">
           <p class="eyebrow">Campus de Almada</p>
           <h1 id="hero-title">Acolhimento simples para novos estudantes</h1>
@@ -76,16 +73,16 @@
 
       <section class="quick-info" aria-label="Informação rápida">
         <article>
-          <strong data-current-day>Hoje</strong>
-          <span data-current-date>Data atual no campus</span>
+          <strong>Campus de Almada</strong>
+          <span>Avenida Jorge Peixinho, Quinta da Arreinela</span>
         </article>
         <article>
           <strong data-secretary-hours>Serviços Académicos</strong>
-          <span data-secretary-status>Consulta o horário de hoje</span>
+          <span data-secretary-status>Consulta o horário de atendimento</span>
         </article>
         <article>
-          <strong>+351 212 946 261</strong>
-          <span>Secretaria de Almada</span>
+          <strong>Inforestudante</strong>
+          <span>Acesso a dados académicos, candidaturas e serviços</span>
         </article>
       </section>
 
@@ -110,6 +107,20 @@
             <h3>Resolver dúvidas</h3>
             <p>Contactos úteis, perguntas frequentes e processos académicos com linguagem simples.</p>
           </article>
+        </div>
+        <div class="campus-gallery" aria-label="Fotografias do campus">
+          <figure class="campus-shot campus-shot-large">
+            <img src="assets/IMG_2683.jpeg" alt="Caminho principal e edifícios do Campus de Almada">
+            <figcaption>Entrada e percurso principal</figcaption>
+          </figure>
+          <figure class="campus-shot">
+            <img src="assets/IMG_2690.jpeg" alt="Edifício académico e jardim do Campus de Almada">
+            <figcaption>Jardins e salas</figcaption>
+          </figure>
+          <figure class="campus-shot">
+            <img src="assets/IMG_2685.jpeg" alt="Sinalética Piaget junto ao acesso do campus">
+            <figcaption>Acesso ao campus</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -225,19 +236,19 @@
             </p>
             <a href="mailto:sa.almada@ipiaget.pt">sa.almada@ipiaget.pt</a>
           </div>
-          <div class="today-status" aria-live="polite">
-            <span>Hoje no campus</span>
-            <strong data-secretary-today>Horário a calcular</strong>
-            <p data-secretary-status>O estado é atualizado pela data e hora de Lisboa.</p>
+          <div class="secretary-status" aria-live="polite">
+            <span>Estado da secretaria</span>
+            <strong data-secretary-hours>Horário a calcular</strong>
+            <p data-secretary-status>O estado é atualizado pela hora de Lisboa.</p>
           </div>
           <ul class="hours-list" aria-label="Horário semanal da secretaria">
-            <li data-weekday="1"><span>Segunda-feira</span><strong>14:00-16:00</strong></li>
-            <li data-weekday="2"><span>Terça-feira</span><strong>10:00-12:00</strong></li>
-            <li data-weekday="3"><span>Quarta-feira</span><strong>14:00-16:00</strong></li>
-            <li data-weekday="4"><span>Quinta-feira</span><strong>10:00-12:00</strong></li>
-            <li data-weekday="5"><span>Sexta-feira</span><strong>16:00-18:00</strong></li>
-            <li data-weekday="6"><span>Sábado</span><strong>Encerrado</strong></li>
-            <li data-weekday="0"><span>Domingo</span><strong>Encerrado</strong></li>
+            <li><span>Segunda-feira</span><strong>14:00-16:00</strong></li>
+            <li><span>Terça-feira</span><strong>10:00-12:00</strong></li>
+            <li><span>Quarta-feira</span><strong>14:00-16:00</strong></li>
+            <li><span>Quinta-feira</span><strong>10:00-12:00</strong></li>
+            <li><span>Sexta-feira</span><strong>16:00-18:00</strong></li>
+            <li><span>Sábado</span><strong>Encerrado</strong></li>
+            <li><span>Domingo</span><strong>Encerrado</strong></li>
           </ul>
         </div>
       </section>
@@ -250,61 +261,136 @@
             Listas separadas para consulta rápida dos cursos divulgados pelo Piaget para o Campus de Almada.
           </p>
         </div>
-        <div class="program-grid">
-          <article class="program-card">
-            <span>CTeSP</span>
-            <h3>Cursos Técnicos Superiores Profissionais</h3>
-            <p>Percursos práticos e focados em competências técnicas de proximidade ao mercado.</p>
-            <ul>
-              <li>Análise de Dados em Gestão de Informação</li>
-              <li>Animação, Modelação e Desenho Digital</li>
-              <li>Assessoria e Gestão Administrativa</li>
-              <li>Cibersegurança</li>
-              <li>Desenvolvimento de Videojogos e Aplicações Multimédia</li>
-              <li>Desporto, Lazer e Bem-Estar</li>
-              <li>Eletrónica e Automação</li>
-              <li>Estética, Cosmética e Bem-Estar</li>
-              <li>Gerontologia</li>
-              <li>Gestão Clínica Administrativa</li>
-              <li>Infraestruturas Cloud, Redes e Datacenter</li>
-              <li>Intervenção Educativa em Creche</li>
-              <li>Marketing e Vendas</li>
-              <li>Programação em Web, Dispositivos e Aplicações Móveis</li>
-              <li>Serviço Social e Desenvolvimento Comunitário</li>
-            </ul>
-            <a href="https://www.ipiaget.org/ctesp/" target="_blank" rel="noreferrer">Ver CTeSP no Piaget</a>
-          </article>
-          <article class="program-card">
-            <span>Licenciaturas</span>
-            <h3>1.º ciclo de estudos</h3>
-            <p>Formações superiores de base para entrada no ensino superior e progressão académica.</p>
-            <ul>
-              <li>Dietética e Nutrição</li>
-              <li>Educação Básica</li>
-              <li>Educação Física e Desporto</li>
-              <li>Educação Social</li>
-              <li>Engenharia Informática</li>
-              <li>Fisioterapia</li>
-              <li>Gestão</li>
-              <li>Medicina Tradicional Chinesa</li>
-              <li>Psicologia</li>
-            </ul>
-            <a href="https://www.ipiaget.org/licenciaturas/" target="_blank" rel="noreferrer">Ver licenciaturas no Piaget</a>
-          </article>
-          <article class="program-card">
-            <span>Mestrados</span>
-            <h3>2.º ciclo de estudos</h3>
-            <p>Formações de especialização para aprofundamento académico, profissional e científico.</p>
-            <ul>
-              <li>Educação Pré-Escolar e Ensino do 1.º Ciclo do Ensino Básico</li>
-              <li>Ensino de Educação Física nos Ensinos Básico e Secundário</li>
-              <li>Ensino do 1.º Ciclo do Ensino Básico e de Português e História e Geografia de Portugal no 2.º Ciclo do Ensino Básico</li>
-              <li>Exercício e Saúde</li>
-              <li>Psicologia Clínica e da Saúde</li>
-              <li>Psicologia Social e das Organizações</li>
-            </ul>
-            <a href="https://www.ipiaget.org/mestrados/" target="_blank" rel="noreferrer">Ver mestrados no Piaget</a>
-          </article>
+        <div class="program-grid" data-programs>
+          <div class="program-picker" role="tablist" aria-label="Escolher ciclo de estudos">
+            <button
+              class="program-card is-active"
+              type="button"
+              id="ctesp-tab"
+              role="tab"
+              aria-selected="true"
+              aria-controls="ctesp-panel"
+              data-program-tab="ctesp"
+            >
+              <span>CTeSP</span>
+              <h3>Cursos Técnicos Superiores Profissionais</h3>
+              <p>Percursos práticos e focados em competências técnicas de proximidade ao mercado.</p>
+              <small>15 cursos</small>
+            </button>
+            <button
+              class="program-card"
+              type="button"
+              id="degree-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="degree-panel"
+              data-program-tab="degree"
+            >
+              <span>Licenciaturas</span>
+              <h3>1.º ciclo de estudos</h3>
+              <p>Formações superiores de base para entrada no ensino superior e progressão académica.</p>
+              <small>9 cursos</small>
+            </button>
+            <button
+              class="program-card"
+              type="button"
+              id="master-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="master-panel"
+              data-program-tab="master"
+            >
+              <span>Mestrados</span>
+              <h3>2.º ciclo de estudos</h3>
+              <p>Formações de especialização para aprofundamento académico, profissional e científico.</p>
+              <small>6 cursos</small>
+            </button>
+          </div>
+
+          <div class="program-detail">
+            <article
+              class="program-panel is-active"
+              id="ctesp-panel"
+              role="tabpanel"
+              aria-labelledby="ctesp-tab"
+              data-program-panel="ctesp"
+            >
+              <div class="program-panel-head">
+                <span>CTeSP</span>
+                <h3>Cursos Técnicos Superiores Profissionais</h3>
+                <p>Percursos práticos e focados em competências técnicas de proximidade ao mercado.</p>
+                <a href="https://www.ipiaget.org/ctesp/" target="_blank" rel="noreferrer">Ver CTeSP no Piaget</a>
+              </div>
+              <ul>
+                <li>Análise de Dados em Gestão de Informação</li>
+                <li>Animação, Modelação e Desenho Digital</li>
+                <li>Assessoria e Gestão Administrativa</li>
+                <li>Cibersegurança</li>
+                <li>Desenvolvimento de Videojogos e Aplicações Multimédia</li>
+                <li>Desporto, Lazer e Bem-Estar</li>
+                <li>Eletrónica e Automação</li>
+                <li>Estética, Cosmética e Bem-Estar</li>
+                <li>Gerontologia</li>
+                <li>Gestão Clínica Administrativa</li>
+                <li>Infraestruturas Cloud, Redes e Datacenter</li>
+                <li>Intervenção Educativa em Creche</li>
+                <li>Marketing e Vendas</li>
+                <li>Programação em Web, Dispositivos e Aplicações Móveis</li>
+                <li>Serviço Social e Desenvolvimento Comunitário</li>
+              </ul>
+            </article>
+
+            <article
+              class="program-panel"
+              id="degree-panel"
+              role="tabpanel"
+              aria-labelledby="degree-tab"
+              data-program-panel="degree"
+              hidden
+            >
+              <div class="program-panel-head">
+                <span>Licenciaturas</span>
+                <h3>1.º ciclo de estudos</h3>
+                <p>Formações superiores de base para entrada no ensino superior e progressão académica.</p>
+                <a href="https://www.ipiaget.org/licenciaturas/" target="_blank" rel="noreferrer">Ver licenciaturas no Piaget</a>
+              </div>
+              <ul>
+                <li>Dietética e Nutrição</li>
+                <li>Educação Básica</li>
+                <li>Educação Física e Desporto</li>
+                <li>Educação Social</li>
+                <li>Engenharia Informática</li>
+                <li>Fisioterapia</li>
+                <li>Gestão</li>
+                <li>Medicina Tradicional Chinesa</li>
+                <li>Psicologia</li>
+              </ul>
+            </article>
+
+            <article
+              class="program-panel"
+              id="master-panel"
+              role="tabpanel"
+              aria-labelledby="master-tab"
+              data-program-panel="master"
+              hidden
+            >
+              <div class="program-panel-head">
+                <span>Mestrados</span>
+                <h3>2.º ciclo de estudos</h3>
+                <p>Formações de especialização para aprofundamento académico, profissional e científico.</p>
+                <a href="https://www.ipiaget.org/mestrados/" target="_blank" rel="noreferrer">Ver mestrados no Piaget</a>
+              </div>
+              <ul>
+                <li>Educação Pré-Escolar e Ensino do 1.º Ciclo do Ensino Básico</li>
+                <li>Ensino de Educação Física nos Ensinos Básico e Secundário</li>
+                <li>Ensino do 1.º Ciclo do Ensino Básico e de Português e História e Geografia de Portugal no 2.º Ciclo do Ensino Básico</li>
+                <li>Exercício e Saúde</li>
+                <li>Psicologia Clínica e da Saúde</li>
+                <li>Psicologia Social e das Organizações</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -395,7 +481,7 @@
               </button>
             </h3>
             <div class="faq-panel" hidden>
-              <p>O horário dos Serviços Académicos de Almada aparece na secção Serviços e é atualizado para o dia atual pela data e hora de Lisboa.</p>
+              <p>O horário dos Serviços Académicos de Almada aparece na secção Serviços e o estado é atualizado pela hora de Lisboa.</p>
             </div>
           </article>
           <article class="faq-item">
