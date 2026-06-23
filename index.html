@@ -29,7 +29,13 @@
         <a href="#contactos">Contactos</a>
       </nav>
 
-      <a class="login-button" href="#links">Entrar</a>
+      <a
+        class="login-button"
+        href="https://inforestudante.ipiaget.org/nonio/security/login.do"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Entrar no Inforestudante"
+      >Entrar</a>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
         <span class="sr-only">Abrir menu</span>
@@ -46,6 +52,7 @@
       <a href="#cursos">Cursos</a>
       <a href="#faq">FAQ</a>
       <a href="#contactos">Contactos</a>
+      <a href="https://inforestudante.ipiaget.org/nonio/security/login.do" target="_blank" rel="noreferrer">Entrar no Inforestudante</a>
     </div>
 
     <main id="inicio">
@@ -69,16 +76,16 @@
 
       <section class="quick-info" aria-label="Informação rápida">
         <article>
-          <strong>Hoje</strong>
-          <span>Receção ao estudante</span>
+          <strong data-current-day>Hoje</strong>
+          <span data-current-date>Data atual no campus</span>
         </article>
         <article>
-          <strong>09:00-18:00</strong>
-          <span>Secretaria aberta</span>
+          <strong data-secretary-hours>Serviços Académicos</strong>
+          <span data-secretary-status>Consulta o horário de hoje</span>
         </article>
         <article>
-          <strong>Bloco A</strong>
-          <span>Ponto de apoio inicial</span>
+          <strong>+351 212 946 261</strong>
+          <span>Secretaria de Almada</span>
         </article>
       </section>
 
@@ -189,56 +196,114 @@
         <div class="service-grid">
           <article class="service-card">
             <h3>Secretaria</h3>
-            <p>Matrículas, certificados, horários, pagamentos e documentos académicos.</p>
+            <p>Matrículas, certificados, horários, pagamentos, documentos académicos e pedidos de informação.</p>
             <a href="#contactos">Ver contacto</a>
           </article>
           <article class="service-card">
             <h3>Biblioteca</h3>
-            <p>Pesquisa, estudo, reservas, apoio documental e recursos digitais.</p>
-            <a href="#links">Ver horário</a>
+            <p>Pesquisa, estudo, reservas, apoio documental, recursos digitais e orientação para trabalhos.</p>
+            <a href="#contactos">Confirmar apoio</a>
           </article>
           <article class="service-card">
             <h3>Apoio ao estudante</h3>
-            <p>Integração, necessidades especiais, acompanhamento e encaminhamento.</p>
+            <p>Integração, necessidades especiais, acompanhamento, encaminhamento e apoio no primeiro contacto.</p>
             <a href="#contactos">Pedir apoio</a>
           </article>
           <article class="service-card">
             <h3>Vida académica</h3>
-            <p>Eventos, atividades, núcleos, sessões de acolhimento e oportunidades.</p>
+            <p>Eventos, atividades, núcleos, sessões de acolhimento, oportunidades e ligação à comunidade.</p>
             <a href="#primeiro-dia">Ver eventos</a>
           </article>
+        </div>
+        <div class="secretary-panel" aria-labelledby="secretary-hours-title">
+          <div class="secretary-summary">
+            <p class="eyebrow">Horário oficial</p>
+            <h3 id="secretary-hours-title">Serviços Académicos de Almada</h3>
+            <p>
+              Atendimento presencial de segunda a sexta, com horário diferente por dia.
+              Fora deste horário, o atendimento pode ser feito por marcação.
+            </p>
+            <a href="mailto:sa.almada@ipiaget.pt">sa.almada@ipiaget.pt</a>
+          </div>
+          <div class="today-status" aria-live="polite">
+            <span>Hoje no campus</span>
+            <strong data-secretary-today>Horário a calcular</strong>
+            <p data-secretary-status>O estado é atualizado pela data e hora de Lisboa.</p>
+          </div>
+          <ul class="hours-list" aria-label="Horário semanal da secretaria">
+            <li data-weekday="1"><span>Segunda-feira</span><strong>14:00-16:00</strong></li>
+            <li data-weekday="2"><span>Terça-feira</span><strong>10:00-12:00</strong></li>
+            <li data-weekday="3"><span>Quarta-feira</span><strong>14:00-16:00</strong></li>
+            <li data-weekday="4"><span>Quinta-feira</span><strong>10:00-12:00</strong></li>
+            <li data-weekday="5"><span>Sexta-feira</span><strong>16:00-18:00</strong></li>
+            <li data-weekday="6"><span>Sábado</span><strong>Encerrado</strong></li>
+            <li data-weekday="0"><span>Domingo</span><strong>Encerrado</strong></li>
+          </ul>
         </div>
       </section>
 
       <section class="section" id="cursos" aria-labelledby="courses-title">
         <div class="section-head">
-          <p class="eyebrow">Cursos em Almada</p>
-          <h2 id="courses-title">Oferta organizada por área</h2>
+          <p class="eyebrow">Cursos no Piaget Almada</p>
+          <h2 id="courses-title">Oferta organizada por ciclo de estudos</h2>
           <p>
-            A página de cursos ajuda candidatos e novos estudantes a perceberem rapidamente que
-            áreas existem no Campus de Almada.
+            Listas separadas para consulta rápida dos cursos divulgados pelo Piaget para o Campus de Almada.
           </p>
         </div>
-        <div class="course-grid">
-          <article class="course-card">
-            <span>Educação</span>
-            <h3>Escola Superior de Educação</h3>
-            <p>Formação orientada para educação, intervenção, comunidade e práticas pedagógicas.</p>
-          </article>
-          <article class="course-card">
-            <span>Saúde</span>
-            <h3>Escola Superior de Saúde</h3>
-            <p>Cursos ligados à saúde, bem-estar, terapias e acompanhamento de pessoas.</p>
-          </article>
-          <article class="course-card">
-            <span>Tecnologia</span>
-            <h3>Tecnologias e Gestão</h3>
-            <p>Formação em áreas digitais, gestão, dados, desenvolvimento e inovação.</p>
-          </article>
-          <article class="course-card">
+        <div class="program-grid">
+          <article class="program-card">
             <span>CTeSP</span>
-            <h3>Formação técnica superior</h3>
-            <p>Percursos práticos com foco na entrada rápida no mercado de trabalho.</p>
+            <h3>Cursos Técnicos Superiores Profissionais</h3>
+            <p>Percursos práticos e focados em competências técnicas de proximidade ao mercado.</p>
+            <ul>
+              <li>Análise de Dados em Gestão de Informação</li>
+              <li>Animação, Modelação e Desenho Digital</li>
+              <li>Assessoria e Gestão Administrativa</li>
+              <li>Cibersegurança</li>
+              <li>Desenvolvimento de Videojogos e Aplicações Multimédia</li>
+              <li>Desporto, Lazer e Bem-Estar</li>
+              <li>Eletrónica e Automação</li>
+              <li>Estética, Cosmética e Bem-Estar</li>
+              <li>Gerontologia</li>
+              <li>Gestão Clínica Administrativa</li>
+              <li>Infraestruturas Cloud, Redes e Datacenter</li>
+              <li>Intervenção Educativa em Creche</li>
+              <li>Marketing e Vendas</li>
+              <li>Programação em Web, Dispositivos e Aplicações Móveis</li>
+              <li>Serviço Social e Desenvolvimento Comunitário</li>
+            </ul>
+            <a href="https://www.ipiaget.org/ctesp/" target="_blank" rel="noreferrer">Ver CTeSP no Piaget</a>
+          </article>
+          <article class="program-card">
+            <span>Licenciaturas</span>
+            <h3>1.º ciclo de estudos</h3>
+            <p>Formações superiores de base para entrada no ensino superior e progressão académica.</p>
+            <ul>
+              <li>Dietética e Nutrição</li>
+              <li>Educação Básica</li>
+              <li>Educação Física e Desporto</li>
+              <li>Educação Social</li>
+              <li>Engenharia Informática</li>
+              <li>Fisioterapia</li>
+              <li>Gestão</li>
+              <li>Medicina Tradicional Chinesa</li>
+              <li>Psicologia</li>
+            </ul>
+            <a href="https://www.ipiaget.org/licenciaturas/" target="_blank" rel="noreferrer">Ver licenciaturas no Piaget</a>
+          </article>
+          <article class="program-card">
+            <span>Mestrados</span>
+            <h3>2.º ciclo de estudos</h3>
+            <p>Formações de especialização para aprofundamento académico, profissional e científico.</p>
+            <ul>
+              <li>Educação Pré-Escolar e Ensino do 1.º Ciclo do Ensino Básico</li>
+              <li>Ensino de Educação Física nos Ensinos Básico e Secundário</li>
+              <li>Ensino do 1.º Ciclo do Ensino Básico e de Português e História e Geografia de Portugal no 2.º Ciclo do Ensino Básico</li>
+              <li>Exercício e Saúde</li>
+              <li>Psicologia Clínica e da Saúde</li>
+              <li>Psicologia Social e das Organizações</li>
+            </ul>
+            <a href="https://www.ipiaget.org/mestrados/" target="_blank" rel="noreferrer">Ver mestrados no Piaget</a>
           </article>
         </div>
       </section>
@@ -287,12 +352,12 @@
           </p>
         </div>
         <div class="links-grid">
-          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Inforestudante</a>
-          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">e-serviços</a>
-          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Portal do Estudante</a>
-          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Propinas</a>
-          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Ação Social</a>
-          <a href="https://www.ipiaget.org/" target="_blank" rel="noreferrer">Campus Almada</a>
+          <a href="https://inforestudante.ipiaget.org/nonio/security/login.do" target="_blank" rel="noreferrer">Inforestudante</a>
+          <a href="https://areservada.ipiaget.org/" target="_blank" rel="noreferrer">e-serviços</a>
+          <a href="https://portaldoestudante.ipiaget.org/" target="_blank" rel="noreferrer">Portal do Estudante</a>
+          <a href="https://www.ipiaget.org/propinas/" target="_blank" rel="noreferrer">Propinas</a>
+          <a href="https://www.ipiaget.org/acao-social/" target="_blank" rel="noreferrer">Ação Social</a>
+          <a href="https://www.ipiaget.org/campus/campus-de-almada/" target="_blank" rel="noreferrer">Campus Almada</a>
         </div>
       </section>
 
@@ -330,7 +395,7 @@
               </button>
             </h3>
             <div class="faq-panel" hidden>
-              <p>Os horários são comunicados pelos serviços académicos e devem ser confirmados no portal institucional.</p>
+              <p>O horário dos Serviços Académicos de Almada aparece na secção Serviços e é atualizado para o dia atual pela data e hora de Lisboa.</p>
             </div>
           </article>
           <article class="faq-item">
@@ -366,16 +431,20 @@
           </p>
           <div class="contact-list">
             <a href="mailto:sa.almada@ipiaget.pt">
-              <strong>Secretaria</strong>
+              <strong>Secretaria / Serviços Académicos</strong>
               <span>sa.almada@ipiaget.pt</span>
             </a>
             <a href="tel:+351 212 946 261">
               <strong>Telefone</strong>
               <span>+351 212 946 261</span>
             </a>
+            <a href="tel:+351 212 946 250">
+              <strong>Telefone geral</strong>
+              <span>+351 212 946 250</span>
+            </a>
             <span>
               <strong>Localização</strong>
-              <span>Campus de Almada</span>
+              <span>Avenida Jorge Peixinho, n.º 30, Quinta da Arreinela, 2805-059 Almada</span>
             </span>
           </div>
         </div>

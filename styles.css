@@ -9,6 +9,7 @@
   --red: #bd001c;
   --red-dark: #930018;
   --gold: #ffc943;
+  --green: #16803c;
   --shadow: 0 18px 45px rgba(16, 34, 55, 0.08);
   --max: 1440px;
 }
@@ -319,6 +320,7 @@ p {
 .feature-card,
 .service-card,
 .course-card,
+.program-card,
 .check-card,
 .contact-list a,
 .contact-list > span,
@@ -388,6 +390,7 @@ p {
 .feature-grid,
 .service-grid,
 .course-grid,
+.program-grid,
 .arrival-grid {
   display: grid;
   gap: 18px;
@@ -419,6 +422,7 @@ p {
 .feature-card p,
 .service-card p,
 .course-card p,
+.program-card p,
 .check-card li,
 .timeline p {
   color: var(--muted);
@@ -729,6 +733,167 @@ p {
   font-weight: 950;
 }
 
+.secretary-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(240px, 0.62fr) minmax(320px, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.secretary-summary,
+.today-status,
+.hours-list {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+}
+
+.secretary-summary,
+.today-status {
+  padding: 26px;
+}
+
+.secretary-summary h3 {
+  margin-bottom: 12px;
+}
+
+.secretary-summary p {
+  margin-bottom: 18px;
+}
+
+.secretary-summary a,
+.program-card a {
+  color: var(--red-dark);
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.secretary-summary a:hover,
+.program-card a:hover {
+  text-decoration: underline;
+}
+
+.today-status {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  background: #f8faff;
+}
+
+.today-status span {
+  color: #46556c;
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.today-status strong {
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.today-status p {
+  margin: 0;
+}
+
+.today-status.is-open {
+  border-color: rgba(22, 128, 60, 0.36);
+}
+
+.today-status.is-open strong {
+  color: var(--green);
+}
+
+.today-status.is-closed strong {
+  color: var(--red-dark);
+}
+
+.hours-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  color: #33445c;
+  font-size: 0.9rem;
+}
+
+.hours-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.hours-list strong {
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.hours-list .is-today {
+  color: var(--red-dark);
+  background: #fff4f4;
+  font-weight: 950;
+}
+
+.program-grid {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
+
+.program-card {
+  display: grid;
+  gap: 16px;
+  padding: 28px;
+}
+
+.program-card span {
+  width: fit-content;
+  padding: 7px 13px;
+  color: #fff;
+  background: var(--red);
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.program-card h3,
+.program-card p {
+  margin-bottom: 0;
+}
+
+.program-card ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.program-card li {
+  position: relative;
+  padding-left: 20px;
+  color: #33445c;
+  font-size: 0.92rem;
+}
+
+.program-card li::before {
+  position: absolute;
+  top: 0.58em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  content: "";
+}
+
 .guide-section {
   align-items: start;
 }
@@ -973,8 +1138,17 @@ p {
   .feature-grid,
   .arrival-grid,
   .service-grid,
-  .course-grid {
+  .course-grid,
+  .program-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .secretary-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hours-list {
+    grid-column: 1 / -1;
   }
 
   .split-section,
@@ -1091,6 +1265,7 @@ p {
   .arrival-grid,
   .service-grid,
   .course-grid,
+  .program-grid,
   .links-grid {
     grid-template-columns: 1fr;
   }
@@ -1098,9 +1273,24 @@ p {
   .feature-card,
   .service-card,
   .course-card,
+  .program-card,
   .check-card {
     min-height: 0;
     padding: 24px;
+  }
+
+  .secretary-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hours-list {
+    grid-column: auto;
+  }
+
+  .hours-list li {
+    align-items: start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .campus-map {

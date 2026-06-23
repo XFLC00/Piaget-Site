@@ -58,6 +58,111 @@ document.querySelectorAll("[data-map-label]").forEach((pin) => {
   });
 });
 
+const secretarySchedule = {
+  1: { day: "segunda-feira", hours: "14:00-16:00", start: 14 * 60, end: 16 * 60 },
+  2: { day: "terça-feira", hours: "10:00-12:00", start: 10 * 60, end: 12 * 60 },
+  3: { day: "quarta-feira", hours: "14:00-16:00", start: 14 * 60, end: 16 * 60 },
+  4: { day: "quinta-feira", hours: "10:00-12:00", start: 10 * 60, end: 12 * 60 },
+  5: { day: "sexta-feira", hours: "16:00-18:00", start: 16 * 60, end: 18 * 60 },
+};
+
+const weekdayIndex = {
+  domingo: 0,
+  "segunda-feira": 1,
+  "terça-feira": 2,
+  "quarta-feira": 3,
+  "quinta-feira": 4,
+  "sexta-feira": 5,
+  sábado: 6,
+};
+
+function setText(selector, text) {
+  document.querySelectorAll(selector).forEach((element) => {
+    element.textContent = text;
+  });
+}
+
+function getLisbonDateParts(date = new Date()) {
+  const formatter = new Intl.DateTimeFormat("pt-PT", {
+    timeZone: "Europe/Lisbon",
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  });
+
+  const parts = Object.fromEntries(
+    formatter.formatToParts(date).map((part) => [part.type, part.value]),
+  );
+  const weekday = String(parts.weekday || "").toLowerCase();
+
+  return {
+    dayIndex: weekdayIndex[weekday] ?? date.getDay(),
+    weekday,
+    dateLabel: `${parts.day}/${parts.month}/${parts.year}`,
+    minutes: Number(parts.hour) * 60 + Number(parts.minute),
+  };
+}
+
+function findNextSecretarySlot(dayIndex) {
+  for (let offset = 1; offset <= 7; offset += 1) {
+    const nextDay = (dayIndex + offset) % 7;
+    const slot = secretarySchedule[nextDay];
+
+    if (slot) {
+      return slot;
+    }
+  }
+
+  return null;
+}
+
+function updateSecretaryStatus() {
+  const { dayIndex, weekday, dateLabel, minutes } = getLisbonDateParts();
+  const todaySlot = secretarySchedule[dayIndex];
+  const nextSlot = findNextSecretarySlot(dayIndex);
+  const statusCards = document.querySelectorAll(".today-status");
+
+  let status = "Sem atendimento presencial hoje.";
+  let isOpen = false;
+
+  if (todaySlot) {
+    if (minutes < todaySlot.start) {
+      status = `Ainda encerrada. Abre hoje às ${todaySlot.hours.split("-")[0]}.`;
+    } else if (minutes >= todaySlot.start && minutes < todaySlot.end) {
+      status = `Aberta agora. Encerra às ${todaySlot.hours.split("-")[1]}.`;
+      isOpen = true;
+    } else {
+      status = nextSlot
+        ? `Encerrada por hoje. Próximo atendimento: ${nextSlot.day}, ${nextSlot.hours}.`
+        : "Encerrada por hoje.";
+    }
+  } else if (nextSlot) {
+    status = `Encerrada hoje. Próximo atendimento: ${nextSlot.day}, ${nextSlot.hours}.`;
+  }
+
+  setText("[data-current-day]", `Hoje, ${weekday}`);
+  setText("[data-current-date]", dateLabel);
+  setText("[data-secretary-hours]", todaySlot ? todaySlot.hours : "Encerrado");
+  setText("[data-secretary-status]", status);
+  setText("[data-secretary-today]", todaySlot ? todaySlot.hours : "Encerrado");
+
+  document.querySelectorAll("[data-weekday]").forEach((item) => {
+    item.classList.toggle("is-today", Number(item.dataset.weekday) === dayIndex);
+  });
+
+  statusCards.forEach((card) => {
+    card.classList.toggle("is-open", isOpen);
+    card.classList.toggle("is-closed", !isOpen);
+  });
+}
+
+updateSecretaryStatus();
+window.setInterval(updateSecretaryStatus, 60 * 1000);
+
 const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
 
